@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <div class="form-login">
+        <form action="" method="POST">
+            <h2 id="title-form">ĐĂNG NHẬP TÀI KHOẢN</h2>
+
+            <p id="canhbao_tendangnhap" style="color: red; margin-left: 20px;"></p>
+            <p class="o_input">
+                <input type="text" placeholder="Nhập vào tên tài khoản" name="" id="o_tentaikhoan">
+            </p>
+            <p id="canhbao_matkhau" style="color: red;margin-left: 20px;"></p>
+            <p class="o_input">
+                <input type="text" placeholder="Nhập vào mật khẩu" name="" id="o_matkhau">
+            </p>
+            <p class="o_input">
+                <a id="quenmk" href="">Quên mật khẩu</a>
+            </p>
+            <p class="o_input">
+                <input id="btn_login" type="button" onclick="check()" value="Đăng nhập">
+            </p>
+            <p class="o_input">
+                <span class="red">Chưa có tài khoản? </span><a id="dangky" href="">Đăng ký</a>
+            </p>
+        </form>
+        <div class="login_benngoai">
+            <h3 id="title_login">Đăng nhập bằng Facebook hoặc Google</h3>
+            <div class="fb_gg">
+                <img src="fb.png" alt="">
+                <img src="gg.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function check() {
+            var tentaikhoan = document.getElementById('o_tentaikhoan').value;
+            if (tentaikhoan == "")
+                document.getElementById("canhbao_tendangnhap").innerHTML = "khong duoc de trong"
+
+            var matkhau = document.getElementById("o_matkhau").value
+            if (matkhau == "")
+                document.getElementById("canhbao_matkhau").innerHTML = "Khong duoc bo trong"
+        }
+    </script>
+</body>
+
+</html>
