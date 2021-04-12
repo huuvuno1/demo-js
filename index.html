@@ -11,7 +11,7 @@
 
 <body>
     <div class="form-login">
-        <form action="" method="POST">
+        <form action="" method="POST" id="form_login" onsubmit="return check()">
             <h2 id="title-form">ĐĂNG NHẬP TÀI KHOẢN</h2>
 
             <p id="canhbao_tendangnhap" style="color: red; margin-left: 20px;"></p>
@@ -26,7 +26,7 @@
                 <a id="quenmk" href="">Quên mật khẩu</a>
             </p>
             <p class="o_input">
-                <input id="btn_login" type="button" onclick="check()" value="Đăng nhập">
+                <input id="btn_login" type="submit" value="Đăng nhập">
             </p>
             <p class="o_input">
                 <span class="red">Chưa có tài khoản? </span><a id="dangky" href="">Đăng ký</a>
@@ -43,13 +43,27 @@
 
     <script>
         function check() {
+            var ok = true;
+
             var tentaikhoan = document.getElementById('o_tentaikhoan').value;
-            if (tentaikhoan == "")
-                document.getElementById("canhbao_tendangnhap").innerHTML = "khong duoc de trong"
+
+            var canhbao_tendangnhap = document.getElementById("canhbao_tendangnhap");
+            if (tentaikhoan == "") {
+                ok = false;
+                canhbao_tendangnhap.innerHTML = "khong duoc de trong"
+            } else
+                canhbao_tendangnhap.innerHTML = ""
 
             var matkhau = document.getElementById("o_matkhau").value
-            if (matkhau == "")
-                document.getElementById("canhbao_matkhau").innerHTML = "Khong duoc bo trong"
+
+            var canhbao_matkhau = document.getElementById("canhbao_matkhau")
+            if (matkhau == "") {
+                ok = false;
+                canhbao_matkhau.innerHTML = "Khong duoc bo trong"
+            } else
+                canhbao_matkhau.innerHTML = ""
+
+            return ok;
         }
     </script>
 </body>
